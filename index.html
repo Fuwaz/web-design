@@ -1,0 +1,97 @@
+<!--Cailyn-Rose Dapkins-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Transformations</title>
+  <style>
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+      
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .image-container:first-child img {
+        border-radius: 50%;
+        outline: 2px solid black;
+    }
+
+    .image-container:nth-child(2) img {
+        filter: grayscale(100%);
+        border: 50px solid #000;
+        border-image: url(tic-tac-toe.png) 50 round;
+    }
+
+    .image-container:nth-child(3) img {
+        -webkit-filter: drop-shadow(-5px -5px 5px #000000);
+        filter: drop-shadow(20px 0px 5px #000000) hue-rotate(100deg);
+    }
+
+    .image-container:nth-child(4) img {
+        background: linear-gradient(to bottom right, #7e75ff, #ffffff);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+    
+    .image-container:nth-child(5) img {
+        -webkit-filter: opacity(75%);
+        filter: invert(100%) opacity(75%);
+        border-radius: 150px 0 150px 0;
+    }
+
+    .image-container:nth-child(6) {
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+    }
+
+    .image-container:nth-child(6)::after {
+        content: "Presenting";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        filter: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="image-grid">
+  <div class="image-container">
+    <img src="penguins.jpg" alt="Penguins">
+  </div>
+  <div class="image-container">
+    <img src="football_field.jpg" alt="Football Field">
+  </div>
+  <div class="image-container">
+    <img src="dinosaur.png" alt="Dinosaur">
+  </div>
+  <div class="image-container">
+    <img src="seagull.png" alt="Seagull">
+  </div>
+  <div class="image-container">
+    <img src="butterfly.jpg" alt="Butterfly">
+  </div>
+  <div class="image-container">
+    <img src="theater_stage.jpg" alt="Theater Stage">
+  </div>
+</div>
+
+</body>
+</html>
